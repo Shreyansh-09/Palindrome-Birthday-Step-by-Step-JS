@@ -44,3 +44,20 @@ function convertDateFromNumberToString(number){
 
     return(dateInString);
 }
+
+function variationOfDate(date){
+    var stringDate = convertDateFromNumberToString(date);
+
+    var DDMMYYYY = stringDate.day + stringDate.month + stringDate.year;
+    var MMDDYYYY = stringDate.month + stringDate.day + stringDate.year;
+    var YYYYMMDD = stringDate.year + stringDate.month + stringDate.day;
+    var DDMMYY = stringDate.day + stringDate.month + stringDate.year.slice(2);
+    var MMDDYY = stringDate.month + stringDate.day + stringDate.year.slice(2);
+    var YYMMDD = stringDate.year.slice(2) + stringDate.month + stringDate.day;
+
+    return([DDMMYYYY,MMDDYYYY,YYYYMMDD,DDMMYY,MMDDYY,YYMMDD]);
+}
+
+var date = {day: 4, month: 9, year: 2022};
+
+console.log(variationOfDate(date));
